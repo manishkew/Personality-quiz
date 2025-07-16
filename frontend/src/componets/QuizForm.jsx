@@ -78,6 +78,7 @@ const handleSubmit = async (e) => {
         name="luckyNumber"
         placeholder="Lucky Number"
         value={form.luckyNumber}
+        min="0"
         onChange={handleChange}
         required
         className="border p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
