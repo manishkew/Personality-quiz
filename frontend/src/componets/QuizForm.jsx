@@ -12,34 +12,12 @@ const QuizForm = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//   try {
-//   const res = await API.get(`/result?userId=${userId}`);
-//   localStorage.setItem("userId", userId);
-//   localStorage.setItem("result", res.data.result);
-//   navigate("/result");
-// } catch (error) {
-//   if (error.response && error.response.status === 404) {
-//     const randomPersonality = personalities[Math.floor(Math.random() * personalities.length)];
-//     await API.post("/result", { userId, result: randomPersonality });
-//     localStorage.setItem("userId", userId);
-//     localStorage.setItem("result", randomPersonality);
-//     navigate("/result");
-//   } else {
-//     console.error("Error checking result:", error);
-//   }
-// }
-
-//   };
-
 const handleSubmit = async (e) => {
   e.preventDefault();
 
   try {
     const idRes = await API.post("/generate-id", form);
-    const userId = idRes.data.userId; // ✅ Fix here
+    const userId = idRes.data.userId; 
 
     try {
       const res = await API.get(`/result?userId=${userId}`);
@@ -68,7 +46,7 @@ const handleSubmit = async (e) => {
       onSubmit={handleSubmit}
       className="flex flex-col gap-3 w-full max-w-sm bg-white p-6 rounded shadow"
     >
-    <h1 className="text-3xl font-bold italic text-center mb-6 text-blue-600">Personality Quiz</h1>
+    <h1 className="text-3xl font-bold  text-center mb-6 text-blue-600">Personality Quiz</h1>
       <input
         type="text"
         name="name"
