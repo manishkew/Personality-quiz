@@ -10,3 +10,10 @@ userId VARCHAR(255) NOT NULL UNIQUE,
 result VARCHAR(50) NOT NULL,
 PRIMARY KEY (id)
 );
+
+## db details
+
+host: "localhost",
+user: "root",
+password: "root",
+database: "personality_quiz",
